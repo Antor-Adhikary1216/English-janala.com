@@ -25,6 +25,16 @@ const lodeLevel=(id)=>{
 const dssplyLaverWords=(word)=>{
 const wordContainer=document.getElementById("wrod-container");
  wordContainer.innerHTML="";
+ if(word.length == 0){
+ wordContainer.innerHTML=`
+  <div class="col-span-full text-center ">
+               <img src="assets/alert-error.png" class="mx-auto mt-2">
+              <p class="mt-2">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+              <p class=" font-medium text-[25px] cursor-pointer mt-2">নেক্সট Lesson এ যান</p>
+            </div>
+ `;
+  return
+ }
  word.forEach(words => {
      console.log(words)
     const crad = document.createElement("div") 
@@ -64,5 +74,7 @@ jsonData.forEach(datas => {
 }
 
 lodDataFetch();
+
+
 
 
